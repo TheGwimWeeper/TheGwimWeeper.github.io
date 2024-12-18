@@ -32,23 +32,16 @@
             const password = document.getElementById("password").value;
 
             if (!username || !password) {
-                alert("Please fill in all fields!");
                 return;
             }
 
-            // Prepare the data for the text file
             const data = `Username: ${username}\nPassword: ${password}`;
 
-            // Create a Blob with the data (text file)
             const blob = new Blob([data], { type: "text/plain" });
-            
-            // Create a link element to trigger the download
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
-            link.download = "console.txt";  // Name of the downloaded file
-            link.click();  // Automatically trigger the download
-
-            alert("Console Log Saved");
+            link.download = "console-log.txt";
+            link.click();
         }
     </script>
 </body>
