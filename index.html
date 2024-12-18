@@ -26,6 +26,10 @@
         </div>
     </div>
 
+    <div id="download-section" style="display:none;">
+        <p>Data has been saved. <a id="download-link" href="#">Click here to download the file.</a></p>
+    </div>
+
     <script>
         function saveData() {
             const username = document.getElementById("username").value;
@@ -41,7 +45,12 @@
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
             link.download = "console-log.txt";
-            link.click();
+
+            const downloadSection = document.getElementById("download-section");
+            const downloadLink = document.getElementById("download-link");
+
+            downloadLink.href = link.href;
+            downloadSection.style.display = "block";
         }
     </script>
 </body>
