@@ -1,122 +1,69 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #fafafa;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.container {
-    max-width: 350px;
-    width: 100%;
+.login-container {
+    width: 350px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.login-box {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    padding: 40px 20px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-.logo {
-    width: 150px;
+.login-container h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
     margin-bottom: 20px;
+    font-weight: bold;
+    color: #262626;
 }
 
-form input {
+input {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #dbdbdb;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fafafa;
     font-size: 14px;
 }
 
-form button {
+button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #0095f6;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
-    font-weight: bold;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
 }
 
-form button:hover {
-    background-color: #007bb5;
+button:hover {
+    background-color: #006db3;
 }
 
-.divider {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
+#facebookBtn {
+    background-color: #4267B2;
+    margin-top: 15px;
 }
 
-.divider hr {
-    flex: 1;
-    height: 1px;
-    border: none;
-    background-color: #dbdbdb;
+#facebookBtn:hover {
+    background-color: #365899;
 }
 
-.divider span {
-    padding: 0 10px;
-    font-size: 12px;
-    color: #8e8e8e;
-}
-
-.fb-login {
-    background-color: transparent;
-    color: #385185;
-    border: none;
-    font-weight: bold;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.fb-login:hover {
-    text-decoration: underline;
-}
-
-.forgot-password {
-    display: block;
+.footer {
     margin-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.footer a {
     color: #00376b;
     text-decoration: none;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.signup-box {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    padding: 20px 0;
-    border-radius: 8px;
-}
-
-.signup-box p {
-    font-size: 14px;
-    color: #8e8e8e;
-}
-
-.signup-box a {
-    color: #0095f6;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.signup-box a:hover {
-    text-decoration: underline;
 }
