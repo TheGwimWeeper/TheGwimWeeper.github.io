@@ -49,15 +49,6 @@ button:hover {
     background-color: #006db3;
 }
 
-#facebookBtn {
-    background-color: #4267B2;
-    margin-top: 15px;
-}
-
-#facebookBtn:hover {
-    background-color: #365899;
-}
-
 .footer {
     margin-top: 20px;
     font-size: 14px;
